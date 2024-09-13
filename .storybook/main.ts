@@ -1,6 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 
 import { join, dirname } from "path";
+import KumaUIWebpackPlugin from "@kuma-ui/webpack-plugin";
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -26,6 +27,10 @@ const config: StorybookConfig = {
         useSWC: true
       }
     },
+  },
+  webpackFinal: async (config) => {
+    config.plugins = [...(config.plugins ?? []), new KumaUIWebpackPlugin({})];
+    return config;
   },
   swc: () => ({
     jsc: {

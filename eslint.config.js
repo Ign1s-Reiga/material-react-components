@@ -9,7 +9,7 @@ module.exports = [
     languageOptions: {
       parser: typescriptParser
     },
-    files: ['src/**/*.ts', 'src/**/*.tsx'],
+    files: ['src/**/*.ts', 'src/**/*.tsx', '.storybook/*.*'],
     plugins: {
       react: reactPlugin,
       'react-hooks': hooksPlugin,
