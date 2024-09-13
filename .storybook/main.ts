@@ -29,7 +29,7 @@ const config: StorybookConfig = {
     },
   },
   webpackFinal: async (config) => {
-    config.plugins = [...(config.plugins ?? []), new KumaUIWebpackPlugin({})];
+    config.plugins?.push(new KumaUIWebpackPlugin({}));
     return config;
   },
   swc: () => ({
@@ -40,9 +40,6 @@ const config: StorybookConfig = {
         }
       }
     }
-  }),
-  docs: {
-    autodocs: 'tag'
-  }
+  })
 };
 export default config;

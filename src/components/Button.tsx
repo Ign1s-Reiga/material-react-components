@@ -5,9 +5,6 @@ export interface ButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
 }
 
-const styles = {
-  
-}
 
 export const Button = ({
   variant = 'text',
